@@ -24,10 +24,10 @@ jobs:
      - name: Create zip deployment package
        run : zip -r $ {{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git* 
          
-
+     - name: Configure my AWS Credentials
+       uses: aws-actions/configure-aws-credentials@v1
+       with: 
+        access-secret-key
       
 
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    
