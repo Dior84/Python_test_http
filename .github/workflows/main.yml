@@ -30,7 +30,11 @@ jobs:
         aws-access-key-id: ${{ secrets.My_aws_access_key }}
         aws-secret-access-key : ${{ secrets.my_aws_secret_key }}
         aws-region : ${{ env.AWS-REGION_NAME }}
+     
+     - name: Copy Deployment package to s3 bucket
+       run:  aws s3 cp $ {{ DEPLOY_PACKAGE_NAME }} s3://${{ EB_S3_PACKAGE_BUCKET_NAME }}/
       
-      
+     - name: Print Happy Message for CI part1
+       run: echo "CI Pipeline Finished successfull"
 
     
