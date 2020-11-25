@@ -39,7 +39,8 @@ jobs:
      
 
   my-cd-part2:  
-   runs-on: ubuntu-latest  
+   runs-on: ubuntu-latest
+   needs: [my_ci_part1]  
    
    steps: 
      - name: Configure my AWS Credentials
