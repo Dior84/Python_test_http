@@ -52,12 +52,11 @@ jobs:
      
      - name: Create new Elastic Beanstalk APP version
        run: |
-        aws elasticbeanstalk create application version\
-        --application-name ${{ env.EB_APPLICATION_NAME }}\
-        --source-bundle s3bucket="${{ env.EB_S3_PACKAGE_BUCKET_NAME }}",
-         s3key="${{ env.DEPLOY_PACKAGE_NAME }}"\
-        --version-label "ver-${{ github.sha }}"\
-        --description "commit SHA - ${{ github.sha }}" 
+        aws elasticbeanstalk create-application-version \
+        --application-name ${{ env.EB_APPLICATION_NAME }} \
+        --source-bundle s3bucket="${{ env.EB_S3_PACKAGE_BUCKET_NAME }}",s3key="${{ env.DEPLOY_PACKAGE_NAME }}" \
+        --version-label "ver-${{ github.sha }}" \
+        --description "commitSHA - ${{ github.sha }}" 
    
      - name: Deploy new Elastic Beanstalk APP version
        run: aws elasticbeanstalk update-environment
