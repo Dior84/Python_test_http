@@ -2,9 +2,9 @@ name: CI-CD Elastic beanstalk_AWS
 
 env:
  EB_S3_PACKAGE_BUCKET_NAME: "dior-app-pythonpackages"
- EB_APPLICATION_NAME      : "My_python_application"
- EB_ENVIRONMENT_NAME      : "MyPythonApplication-env"
- DEPLOY_PACKAGE_NAME      : "python_app_${{ github.sha }}.zip"
+ EB_APPLICATION_NAME      : "MyFlask"
+ EB_ENVIRONMENT_NAME      : "MyFlask-env"
+ DEPLOY_PACKAGE_NAME      : "flask_app_${{ github.sha }}.zip"
  AWS-REGION_NAME          : "us-east-1"
 
 on:
